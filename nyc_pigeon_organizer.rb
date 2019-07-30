@@ -1,13 +1,13 @@
 require 'pry'
-def nyc_pigeon_organizer(data)
+def nyc_pigeon_organizer(pigeon_data)
   pigeon_list = {}
-  data.each do |trait, attributes|
-    attributes.each do |details, names|
-      names.each do |name|
-        pigeon_list[name] ||= {}
-        pigeon_list[name][trait] ||= []
-        pigeon_list[name][trait] << details.to_s
-#binding.pry
+  pigeon_data.each do |trait, attribute|
+    attribute.each do |details, names|
+      names.each do |pigeons|
+        pigeon_list[pigeons] ||={}
+        #binding.pry
+        pigeon_list[pigeons][trait] ||=[]
+        pigeon_list[pigeons][trait] << details.to_s
       end
     end
   end
